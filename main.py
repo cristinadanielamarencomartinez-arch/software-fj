@@ -46,3 +46,21 @@ except Exception as e:
 
 
 print("\nEl sistema sigue funcionando correctamente 😎")
+print("\n=== MÁS PRUEBAS ===")
+
+try:
+    x = int("abc")
+except Exception as e:
+    print("Error:", e)
+
+try:
+    y = 10 / 0
+except Exception as e:
+    print("Error:", e)
+
+try:
+    lista = []
+    print(lista[10])
+except Exception as e:
+    print("Error:", e)
+    
