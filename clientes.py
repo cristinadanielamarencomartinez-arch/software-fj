@@ -12,9 +12,10 @@ class Cliente:
         self.cedula = cedula
         self.correo = correo
 
-
     def mostrar_datos(self):
 
         print("Nombre:", self.nombre)
         print("Cédula:", self.cedula)
         print("Correo:", self.correo)
+        print("------------------")
+        
