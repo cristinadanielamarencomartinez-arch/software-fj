@@ -1,0 +1,7 @@
+[INFO] Cliente creado correctamente
+[ERROR] Error controlado: Correo inválido
+[ERROR] Error capturado: invalid literal for int() with base 10: 'abc'
+[ERROR] Error capturado: list index out of range
+[ERROR] invalid literal for int() with base 10: 'abc'
+[ERROR] division by zero
+[ERROR] list index out of range

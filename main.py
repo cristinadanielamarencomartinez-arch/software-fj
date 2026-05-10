@@ -1,6 +1,10 @@
 from clientes import Cliente
+from logger import Logger
 
 print("=== SISTEMA SOFTWARE FJ ===\n")
+
+# Crear logger
+logger = Logger()
 
 # Lista para guardar clientes
 clientes = []
@@ -9,58 +13,53 @@ clientes = []
 try:
     c1 = Cliente("Daniela", "123", "daniela@gmail.com")
     clientes.append(c1)
-    print("Cliente creado correctamente\n")
+    logger.info("Cliente creado correctamente")
 except Exception as e:
-    print("Error creando cliente:", e)
+    logger.error("Error creando cliente: " + str(e))
 
-
-# PRUEBA 2: cliente inválido (correo malo)
+# PRUEBA 2: cliente inválido
 try:
     c2 = Cliente("Juan", "456", "correo_malo")
     clientes.append(c2)
 except Exception as e:
-    print("Error controlado:", e, "\n")
-
+    logger.error("Error controlado: " + str(e))
 
 # MOSTRAR CLIENTES
-print("=== LISTA DE CLIENTES ===")
+print("\n=== LISTA DE CLIENTES ===")
 for c in clientes:
     c.mostrar_datos()
-    print("------------------")
 
-
-# SIMULACIÓN DE ERRORES
+# PRUEBAS DE ERRORES
 print("\n=== PRUEBAS DE ERRORES ===")
 
 try:
-    numero = int("abc")  # error intencional
+    numero = int("abc")
 except Exception as e:
-    print("Error capturado:", e)
-
+    logger.error("Error capturado: " + str(e))
 
 try:
     lista = []
-    print(lista[1])  # error intencional
+    print(lista[1])
 except Exception as e:
-    print("Error capturado:", e)
-
+    logger.error("Error capturado: " + str(e))
 
 print("\nEl sistema sigue funcionando correctamente 😎")
+
+# MÁS PRUEBAS
 print("\n=== MÁS PRUEBAS ===")
 
 try:
     x = int("abc")
 except Exception as e:
-    print("Error:", e)
+    logger.error(str(e))
 
 try:
     y = 10 / 0
 except Exception as e:
-    print("Error:", e)
+    logger.error(str(e))
 
 try:
     lista = []
     print(lista[10])
 except Exception as e:
-    print("Error:", e)
-    
+    logger.error(str(e))
